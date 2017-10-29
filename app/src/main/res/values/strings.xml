@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="enteremail">Enter Email Id</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="firstname">Enter First Name</string>
+    <string name="lastname">Enter Last Name</string>
+    <string name="enter_bith_date_here">Enter Bith date here</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>

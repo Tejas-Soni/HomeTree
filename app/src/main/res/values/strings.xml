@@ -6,4 +6,11 @@
     <string name="lastname">Enter Last Name</string>
     <string name="enter_bith_date_here">Enter Bith date here</string>
     <string name="confirm_password">Confirm Password</string>
+
+
+    <string name="home_tree">HOME TREE</string>
+    <string name="category_name">Category name</string>
+    <string name="see_all">SEE ALL</string>
+    <string name="textview">TextView</string>
+    <string name="search">search</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -143,7 +144,9 @@ public class Date_Picker_Activity extends AppCompatActivity {
                 final  String cnfpaswd = confmpassword.getText().toString();
 
                 if(!pswd.equals(cnfpaswd)){
-                    Toast.makeText(Date_Picker_Activity.this,"Password Not Matching",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(Date_Picker_Activity.this,"Password Not Matching",Toast.LENGTH_LONG).show();
+                    Snackbar snackbar;
+                    Snackbar.make(submit,"Password Not Same",Snackbar.LENGTH_LONG).show();
                 }
 
             }

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,Date_Picker_Activity.class);
+                Intent intent = new Intent(context,Date_Picker_Activity.class );
                 startActivity(intent);
             }
         });

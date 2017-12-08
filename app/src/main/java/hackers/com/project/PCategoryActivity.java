@@ -23,7 +23,7 @@ public class PCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.category_product);
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.category_product_rv);
-        final GridLayoutManager linearLayoutManager = new GridLayoutManager(this,2);
+        final GridLayoutManager linearLayoutManager = new GridLayoutManager(this,3);
         recyclerView.setLayoutManager(linearLayoutManager);
 //        final ArrayList<CategoryModel> categoryList = new ArrayList<>();
         final ArrayList<ProductModel> productList = new ArrayList<>();

@@ -9,13 +9,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button button,button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonclick();
+
     }
     public void buttonclick(){
         final Context context=this;
@@ -25,8 +26,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(context,Date_Picker_Activity.class );
                 startActivity(intent);
-                //hiiiii
+                finish();
             }
         });
+        button2 = findViewById(R.id.login_button);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,Product_activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
+
 }

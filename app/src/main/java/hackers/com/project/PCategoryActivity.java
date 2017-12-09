@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,11 +17,14 @@ import java.util.ArrayList;
 
 public class PCategoryActivity extends AppCompatActivity {
 
-
+   private TextView textView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_product);
+
+        textView= findViewById(R.id.category_name);
+        textView.setText(getIntent().getStringExtra("categoryname"));
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.category_product_rv);
         final GridLayoutManager linearLayoutManager = new GridLayoutManager(this,2);

@@ -29,9 +29,8 @@ public class Product_activity extends AppCompatActivity {
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         final ArrayList<CategoryModel> categoryList = new ArrayList<>();
+        final ArrayList<ProductModel> productList = new ArrayList<>();
         for (int i = 0 ; i < 50 ; i++){
-            final ArrayList<ProductModel> productList = new ArrayList<>();
-
 
             for (int j = 0 ; j < 100 ; j++){
                 final ProductModel productModel = new ProductModel(j,"M1","Product"+j);

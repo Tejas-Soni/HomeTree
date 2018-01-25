@@ -7,7 +7,7 @@
 
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/row_product_iv"
         android:layout_width="95dp"
         android:layout_height="92dp"

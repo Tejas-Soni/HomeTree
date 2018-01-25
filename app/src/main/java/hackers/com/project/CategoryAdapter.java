@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
         final ProductAdapter productAdapter = new ProductAdapter(context,myModel.getProductlist());
         holder.recyclerView.setAdapter(productAdapter);
+
+
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +57,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 context.startActivity(intent);
             }
         });
+
     }
 
 
@@ -67,15 +71,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     Context context;
     ArrayList<CategoryModel> myModelArrayList = new ArrayList<CategoryModel>();
 
-
     public MyViewHolder(View itemView,Context context,ArrayList<CategoryModel> myModelArrayList) {
         super(itemView);
         this.myModelArrayList = myModelArrayList;
         this.context = context;
-
         recyclerView = itemView.findViewById(R.id.row_category_rv);
         tv = itemView.findViewById(R.id.row_category_tv_name);
         button=itemView.findViewById(R.id.button);
+
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
 

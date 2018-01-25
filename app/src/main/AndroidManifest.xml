@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Date_Picker_Activity"/>
-        <activity android:name=".PCategoryActivity"/>
-
+        <activity android:name=".Date_Picker_Activity" />
+        <activity android:name=".PCategoryActivity" />
+        <activity android:name=".SingalProduct" />
+        <activity android:name=".CartActivity"></activity>
     </application>
 
 </manifest>

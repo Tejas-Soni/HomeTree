@@ -1,28 +1,24 @@
 package hackers.com.project;
 
+
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Created by user on 02-10-2017.
@@ -30,13 +26,13 @@ import java.util.*;
 
 
 public class Product_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    Button see;
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
     private android.support.v4.app.ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
-    Button see;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,90 +72,96 @@ public class Product_activity extends AppCompatActivity implements NavigationVie
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.activity_main_rv);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         final ArrayList<CategoryModel> categoryList = new ArrayList<>();
+
         for (int i = 0; i < 50; i++) {
-            final ArrayList<ProductModel> productList = new ArrayList<>();
+            ArrayList<ProductModel> productList = new ArrayList<>();
 
 
-            for (int j = 0; j < 100; j++) {
-                final ProductModel productModel = new ProductModel(j, "M1", "Product" + j);
-                productList.add(productModel);
+            productList = new ArrayList<>();
+            for (i = 0; i < 50; i++) {
+
+
+                for (int j = 0; j < 100; j++) {
+                    final ProductModel productModel = new ProductModel(j, "M1", "Product" + j);
+                    productList.add(productModel);
+                }
+
+                final CategoryModel categoryModel = new CategoryModel("Category" + i, productList);
+
+                categoryList.add(categoryModel);
+
             }
 
-            final CategoryModel categoryModel = new CategoryModel("Category" + i, productList);
+            final CategoryAdapter categoryAdapter = new CategoryAdapter(this, categoryList);
+            recyclerView.setAdapter(categoryAdapter);
 
-            categoryList.add(categoryModel);
+
+        }
+    }
+        @Override
+        protected void onPostCreate (Bundle savedInstanceState){
+            super.onPostCreate(savedInstanceState);
+            // Sync the toggle state after onRestoreInstanceState has occurred.
+            mDrawerToggle.syncState();
+        }
+
+        @Override
+        public void onConfigurationChanged (Configuration newConfig){
+            super.onConfigurationChanged(newConfig);
+            // Pass any configuration change to the drawer toggls
+            mDrawerToggle.onConfigurationChanged(newConfig);
+        }
+
+        @Override
+        public boolean onOptionsItemSelected (MenuItem item){
+            switch (item.getItemId()) {
+
+                case android.R.id.home: {
+                    mDrawerLayout.openDrawer(GravityCompat.START);
+                    break;
+                }
+
+            }
+
+            return true;
 
         }
 
-        final CategoryAdapter categoryAdapter = new CategoryAdapter(this, categoryList);
-        recyclerView.setAdapter(categoryAdapter);
 
+        @Override
+        public boolean onNavigationItemSelected (@NonNull MenuItem item){
+            switch (item.getItemId()) {
+                case R.id.login: {
+                    Intent intent = new Intent(Product_activity.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.plants: {
+                    Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
+                    startActivity(intent);
+                    break;
 
-    }
+                }
+                case R.id.food: {
+                    Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
+                    startActivity(intent);
+                    break;
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
-        mDrawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-            case android.R.id.home: {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                break;
+                }
+                case R.id.gardentools: {
+                    Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
+                    startActivity(intent);
+                    break;
+                }
             }
-
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            return true;
         }
-
-        return true;
-
-    }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.login: {
-                Intent intent = new Intent(Product_activity.this, MainActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.plants: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
-
-            }
-            case R.id.food: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
-
-            }
-            case R.id.gardentools: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
-            }
-        }
-        mDrawerLayout.closeDrawer(GravityCompat.START);
-       return true;
-    }
 
     private void setNavigationViewListner() {
         NavigationView navigationView = findViewById(R.id.navigation_bar);
@@ -167,8 +169,4 @@ public class Product_activity extends AppCompatActivity implements NavigationVie
         navigationView.bringToFront();
     }
 }
-
-
-
-
 

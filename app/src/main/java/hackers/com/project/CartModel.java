@@ -1,20 +1,13 @@
 package hackers.com.project;
 
 /**
- * Created by user on 11-10-2017.
+ * Created by user on 05-01-2018.
  */
 
-public class ProductModel {
-
+public class CartModel {
     private int id;
     private String image;
     private static String name;
-
-    public ProductModel(int id, String image, String name) {
-        this.id = id;
-        this.image = image;
-        this.name = name;
-    }
 
     public int getId() {
         return id;
@@ -32,11 +25,11 @@ public class ProductModel {
         this.image = image;
     }
 
-    public  String getName() {
+    public static String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public static void setName(String name) {
+        CartModel.name = name;
     }
 }

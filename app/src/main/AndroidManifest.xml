@@ -9,11 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".PCategoryActivity">
 
         </activity>
         <activity android:name=".Date_Picker_Activity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Product_activity"/>
+
         <activity android:name=".HomeActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +26,13 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Product_activity"/>
 
+
+
+
+
+        <activity android:name=".SingalProduct" />
+        <activity android:name=".CartActivity"></activity>
 
     </application>
 

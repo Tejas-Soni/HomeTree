@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class HomeActivity extends AppCompatActivity  {
+public class HomeActivity extends AppCompatActivity {
 
-    private static int Splash_timeout=4000;
+    private static int Splash_timeout = 4000;
 
 
     TextView textmsg;
@@ -21,19 +21,16 @@ public class HomeActivity extends AppCompatActivity  {
     VideoView videoView;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-      //  this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //  this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 
-
-        textmsg=(TextView)findViewById(R.id.hometree_anim);
+        textmsg = (TextView) findViewById(R.id.hometree_anim);
         imageView = (ImageView) findViewById(R.id.img_anim);
-        animFadein= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_anim);
+        animFadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_anim);
 //        videoView = (VideoView)findViewById(R.id.vid_back_play);
 //        Uri uri = Uri.parse("hy"+R.raw.videosong);
 //        videoView.setVideoURI(uri);
@@ -45,14 +42,13 @@ public class HomeActivity extends AppCompatActivity  {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 
             }
-        },Splash_timeout);
-
+        }, Splash_timeout);
 
 
     }
-    }
+}

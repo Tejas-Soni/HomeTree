@@ -123,28 +123,7 @@ public class Product_activity extends AppCompatActivity implements NavigationVie
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
             }
-            case R.id.login: {
-                Intent intent = new Intent(Product_activity.this, MainActivity.class);
-                item.setIntent(intent);
-                startActivity(intent);
-                break;
-            }
-            case R.id.plants: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.gardentools: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.food: {
-                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
-                startActivity(intent);
-                break;
 
-            }
         }
 
         return true;
@@ -171,6 +150,11 @@ public class Product_activity extends AppCompatActivity implements NavigationVie
                 startActivity(intent);
                 break;
 
+            }
+            case R.id.gardentools: {
+                Intent intent = new Intent(Product_activity.this, PCategoryActivity.class);
+                startActivity(intent);
+                break;
             }
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);

@@ -1,6 +1,8 @@
 package hackers.com.project;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -33,12 +35,12 @@ public class Date_Picker_Activity extends AppCompatActivity {
 
     private Calendar calendar = Calendar.getInstance();
     private ImageButton btnShow;
-    private TextView txtv;
-    private  EditText fname,lname,mobileno,email,password,confmpassword;
-    private Button reset,submit;
+    private TextView txtv, intv;
+    private EditText fname, lname, mobileno, email, password, confmpassword;
+    private Button reset, submit;
     private RadioGroup radiogp;
-    private RadioButton male,female;
-
+    private RadioButton male, female;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
 
     @Override
@@ -46,11 +48,12 @@ public class Date_Picker_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_activity);
         btnShow = (ImageButton) findViewById(R.id.date_button);
+        intv = (TextView) findViewById(R.id.iamid);
         txtv = (TextView) findViewById(R.id.enterbirthdate);
-        fname= (EditText) findViewById(R.id.first_name);
-        lname= (EditText) findViewById(R.id.lastname);
+        fname = (EditText) findViewById(R.id.first_name);
+        lname = (EditText) findViewById(R.id.lastname);
         radiogp = (RadioGroup) findViewById(R.id.radiogp);
-        male= (RadioButton) findViewById(R.id.male);
+        male = (RadioButton) findViewById(R.id.male);
         female = (RadioButton) findViewById(R.id.female);
         mobileno = (EditText) findViewById(R.id.mobileno);
         email = (EditText) findViewById(R.id.emailid);
@@ -58,6 +61,8 @@ public class Date_Picker_Activity extends AppCompatActivity {
         confmpassword = (EditText) findViewById(R.id.confirm_password);
         reset = (Button) findViewById(R.id.reset_button);
         submit = (Button) findViewById(R.id.submit_button);
+
+
         resetbutton();
         submitbutton();
         btnShow.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +122,8 @@ public class Date_Picker_Activity extends AppCompatActivity {
     }
 
     ;
-    public void resetbutton(){
+
+    public void resetbutton() {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,6 +134,7 @@ public class Date_Picker_Activity extends AppCompatActivity {
                 password.setText("");
                 confmpassword.setText("");
                 txtv.setText("");
+                intv.setText("");
                 radiogp.clearCheck();
 
             }
@@ -135,23 +142,77 @@ public class Date_Picker_Activity extends AppCompatActivity {
 
     }
 
-    public void submitbutton(){
+    public void submitbutton() {
 
         submit.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
-                final String pswd =password.getText().toString();
-                final  String cnfpaswd = confmpassword.getText().toString();
+                final String pswd = password.getText().toString();
+                final String cnfpaswd = confmpassword.getText().toString();
+                String emailid = email.getText().toString().trim();
 
-                if(!pswd.equals(cnfpaswd)){
-                   // Toast.makeText(Date_Picker_Activity.this,"Password Not Matching",Toast.LENGTH_LONG).show();
-                    Snackbar snackbar;
-                    Snackbar.make(submit,"Password Not Same",Snackbar.LENGTH_LONG).show();
+
+                if (fname.getText().toString().length() == 0) {
+                    fname.setError("First Name Not Entered");
+                    fname.requestFocus();
+                } else if (lname.getText().toString().length() == 0) {
+                    lname.setError("Last Name Not Entered");
+                    lname.requestFocus();
+                } else if (radiogp.getCheckedRadioButtonId() == -1) {
+                    male.setError("Gender Not Selected");
+                    female.setError("Gender Not Selected");
+                    female.requestFocus();
+                } else if (mobileno.getText().toString().length() == 0) {
+                    mobileno.setError("Mobile Number Not Entered");
+                    mobileno.requestFocus();
+                } else if (email.getText().toString().length() == 0) {
+                    email.setError("Email Not Entered");
+                    email.requestFocus();
+                } else if (!emailid.matches(emailPattern)) {
+                    email.setError("Enter Valid Email id");
+                    email.requestFocus();
+                } else if (password.getText().toString().length() == 0) {
+                    password.setError("Password Not Entered");
+                    password.requestFocus();
+                } else if (password.getText().toString().length() < 8) {
+                    password.setError("Password Must be Alteast 8 character");
+                    password.requestFocus();
+                } else if (confmpassword.getText().toString().length() == 0) {
+                    confmpassword.setError("Confirm Password Not Entered");
+                    confmpassword.requestFocus();
+                } else if (!pswd.equals(cnfpaswd)) {
+                    password.setError("Password Not Same");
+                    password.requestFocus();
+                    confmpassword.setError("Confirm Password Not Same");
+                    confmpassword.requestFocus();
+                } else if (txtv.getText().toString().length() == 0) {
+                    txtv.setError("Enter Birth Date");
+                    txtv.requestFocus();
+                } else {
+                    ChangeActivity();
                 }
 
+
             }
+
+
         });
+
+
+    }
+
+    public void ChangeActivity() {
+
+        Intent intent = new Intent(Date_Picker_Activity.this, Product_activity.class);
+        startActivity(intent);
+        finish();
+
     }
 }
+
+
+
+
 
 

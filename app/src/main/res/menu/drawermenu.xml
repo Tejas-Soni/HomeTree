@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/login" android:title="Login/SignUp"/>
+    <item android:id="@+id/plants" android:title="Plants"/>
+    <item android:id="@+id/gardentools" android:title="Garden Tools"/>
+    <item android:id="@+id/food" android:title="Garden Foods"/>
+    <item android:id="@+id/designer" android:title="Garden Designer"/>
+</menu>

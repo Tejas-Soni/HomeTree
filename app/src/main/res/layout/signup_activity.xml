@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/emailid"
         android:id="@+id/password"
         android:hint="@string/enter_password"/>
-    <EditText
+     <EditText
         android:layout_width="0dp"
         android:padding="@dimen/twenty"
         android:layout_height="wrap_content"
@@ -104,6 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/password"
         android:id="@+id/confirm_password"
         android:hint="@string/confirm_password"/>
+    <requestFocus/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,17 +116,16 @@
          />
 
     <TextView
-        android:layout_width="0dp"
         android:id="@+id/enterbirthdate"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/confirm_password"
-        android:inputType="date"
         android:hint="@string/enter_bith_date_here"
-        android:text="@string/enter_bith_date_here"
+        android:inputType="date"
         android:padding="@dimen/twenty"
         android:textSize="19sp"
         app:layout_constraintLeft_toRightOf="@+id/date_button"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -147,5 +147,16 @@
         android:padding="@dimen/twenty"
         android:layout_marginTop="@dimen/ten"
         android:layout_marginRight="53dp" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        android:id="@+id/iamid"
+        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

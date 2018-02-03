@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/myprofile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintRight_toLeftOf="@id/guideline2"
+       />
+
+    <TextView
+        android:id="@+id/myprofile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="32dp"
+        android:text="First name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintLeft_toRightOf="@id/guideline2" />
+
+    <TextView
+        android:id="@+id/myprofile_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="56dp"
+        android:text="Last name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintLeft_toRightOf="@id/myprofile_text"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="107dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="81dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Orders"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/twenty"
+        android:padding="@dimen/ten"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/my_orders"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved Cards"
+        android:padding="@dimen/ten"
+        app:layout_constraintTop_toBottomOf="@id/my_orders"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/twenty"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/mysavedcards"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Wish list"
+        android:padding="@dimen/ten"
+        app:layout_constraintTop_toBottomOf="@id/mysavedcards"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/twenty"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/mywhishlist"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:padding="@dimen/ten"
+        app:layout_constraintTop_toBottomOf="@id/mywhishlist"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/twenty"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/setting"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help and Support"
+        android:padding="@dimen/ten"
+        app:layout_constraintTop_toBottomOf="@id/setting"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/twenty"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/helpandsupport"
+        />
+
+</android.support.constraint.ConstraintLayout>

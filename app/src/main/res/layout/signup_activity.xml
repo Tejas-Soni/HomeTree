@@ -54,14 +54,16 @@
             android:text="Male"
             android:id="@+id/male"
             android:checked="false"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:onClick="radiobtnclick"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
             android:checked="false"
             android:id="@+id/female"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:onClick="radiobtnclick"/>
     </RadioGroup>
     <EditText
         android:layout_width="0dp"
@@ -157,6 +159,7 @@
         android:textColor="@color/error"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
 
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

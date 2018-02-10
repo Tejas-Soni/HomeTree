@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import hackers.com.project.model.ResLoginModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,Product_activity.class);
-                startActivity(intent);
-                finish();
                 final String email = edtEmail.getText().toString().trim();
                 final String password = edtPassword.getText().toString().trim();
                 new AsyncLogin().execute(email,password);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         private WSLogin wsLogin;
         private ProgressDialog progressDialog;
+        private ResLoginModel resLoginModel;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... strings) {
             wsLogin = new WSLogin(MainActivity.this);
-            wsLogin.executeService(strings[0],strings[1]);
+            resLoginModel = wsLogin.executeService(strings[0],strings[1]);
             return null;
         }
 
@@ -74,8 +75,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            if(wsLogin.isSuccess()){
+            if(resLoginModel.getResponse() ==0){
+                Intent intent = new Intent(MainActivity.this,Product_activity.class);
+                startActivity(intent);
+                finish();
+            }else{
+               // Toast.makeText(MainActivity.this, resLoginModel.getMessage(), Toast.LENGTH_SHORT).show();
 
+                edtEmail.setError(resLoginModel.getMessage());
             }
             if(progressDialog!=null && progressDialog.isShowing()){
                 progressDialog.dismiss();

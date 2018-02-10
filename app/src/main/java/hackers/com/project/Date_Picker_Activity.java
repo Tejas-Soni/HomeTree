@@ -2,7 +2,9 @@ package hackers.com.project;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -25,6 +27,9 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Calendar;
+
+
+import hackers.com.project.model.ResSignupModel;
 
 /**
  * Created by Tejas Soni on 19-10-2017.
@@ -61,6 +66,7 @@ public class Date_Picker_Activity extends AppCompatActivity {
         confmpassword = (EditText) findViewById(R.id.confirm_password);
         reset = (Button) findViewById(R.id.reset_button);
         submit = (Button) findViewById(R.id.submit_button);
+
 
 
         resetbutton();
@@ -109,7 +115,7 @@ public class Date_Picker_Activity extends AppCompatActivity {
             calendar.set(Calendar.YEAR, year);
             calendar.set(Calendar.MONTH, month);
             calendar.set(Calendar.DAY_OF_MONTH, DayOfMonth);
-            txtv.setText(getFormattedDate("dd-MM-yyyy"));
+            txtv.setText(getFormattedDate("yyyy-MM-dd"));
 
         }
     };
@@ -141,6 +147,28 @@ public class Date_Picker_Activity extends AppCompatActivity {
         });
 
     }
+    public String we;
+
+    public void radiobtnclick(View view){
+        String userGender = "";
+        boolean checked = ((RadioButton)view).isChecked();
+        switch (view.getId()){
+            case R.id.male:
+                if(checked) {
+                    userGender = "male";
+                    we=userGender;
+                    break;
+                }
+            case R.id.female:
+                if(checked){
+                    userGender="female";
+                    we=userGender;
+                    break;
+
+                }
+        }
+
+    }
 
     public void submitbutton() {
 
@@ -150,7 +178,14 @@ public class Date_Picker_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 final String pswd = password.getText().toString();
                 final String cnfpaswd = confmpassword.getText().toString();
-                String emailid = email.getText().toString().trim();
+               final String fname1 = fname.getText().toString().trim();
+                final String lname1 = lname.getText().toString().trim();
+                final String radiogroup = we;
+                final String mobilenum = mobileno.getText().toString().trim();
+                final String emailid = email.getText().toString().trim();
+                final String birthdate = txtv.getText().toString().trim();
+
+
 
 
                 if (fname.getText().toString().length() == 0) {
@@ -190,26 +225,63 @@ public class Date_Picker_Activity extends AppCompatActivity {
                     txtv.setError("Enter Birth Date");
                     txtv.requestFocus();
                 } else {
-                    ChangeActivity();
+
+                    new Date_Picker_Activity.AsyncSignup().execute(fname1,lname1,radiogroup,mobilenum,emailid,pswd,birthdate);
+
+//                    ChangeActivity();
                 }
 
 
             }
-
-
         });
 
-
     }
 
-    public void ChangeActivity() {
+//    public void ChangeActivity() {
+//
+//        Intent intent = new Intent(Date_Picker_Activity.this, Product_activity.class);
+//        startActivity(intent);
+//        finish();
+//
+//    }
+    private class AsyncSignup extends AsyncTask<String,Void,Void> {
 
-        Intent intent = new Intent(Date_Picker_Activity.this, Product_activity.class);
-        startActivity(intent);
-        finish();
+        private WSSignUp wsSignup;
+        private ProgressDialog progressDialog;
+        private ResSignupModel resSignupModel;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = ProgressDialog.show(Date_Picker_Activity.this,"","Please wait");
+        }
+
+        @Override
+        protected Void doInBackground(String... strings) {
+            wsSignup = new WSSignUp(Date_Picker_Activity.this);
+            resSignupModel = wsSignup.executeService(strings[0],strings[1],strings[2],strings[3],strings[4],strings[5],strings[6]);
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if(resSignupModel.getResponse() ==0){
+                Intent intent = new Intent(Date_Picker_Activity.this,Product_activity.class);
+                startActivity(intent);
+                finish();
+            }else{
+                // Toast.makeText(MainActivity.this, resSignupModel.getMessage(), Toast.LENGTH_SHORT).show();
+
+              //  edtEmail.setError(resSignupModel.getMessage());
+            }
+            if(progressDialog!=null && progressDialog.isShowing()){
+                progressDialog.dismiss();
+            }
+        }
 
     }
-}
+    }
 
 
 

@@ -45,6 +45,8 @@ public class WSConstants {
      * Methods Name
      */
     public final static String METHOD_LOGIN = "Login.php";
+    public final static String METHOD_SIGNUP = "insert.php";
+
 
     /**
      * Parameters Name
@@ -52,4 +54,10 @@ public class WSConstants {
     public final String PARAMS_COMPANY_NAME = "company_name";
 public final String PARAMS_EMAIL = "email";
 public final String PARAMS_PASSWORD = "password";
+    public final String PARAMS_FNAME = "fname";
+    public final String PARAMS_LNAME = "lname";
+    public final String PARAMS_GENDER = "gender";
+    public final String PARAMS_MOBNO = "mobileno";
+    public final String PARAMS_BIRTHD = "birthdate";
+
 }

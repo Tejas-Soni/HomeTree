@@ -75,10 +75,8 @@ public class WSUtil {
         final JSONObject jsonObject = new JSONObject();
         try {
             final WSConstants wsConstants = new WSConstants();
-            final JSONObject jsonObjectSettings = new JSONObject();
-            jsonObjectSettings.put(wsConstants.PARAMS_RESPONSE, 1);
-            jsonObjectSettings.put(wsConstants.PARAMS_SUCCESS, "Network error. Please try again after some time");
-            jsonObject.put(wsConstants.PARAMS_SETTINGS, jsonObjectSettings);
+            jsonObject.put(wsConstants.PARAMS_RESPONSE, 1);
+            jsonObject.put(wsConstants.PARAMS_SUCCESS, "Network error. Please try again after some time");
         } catch (JSONException e) {
             e.printStackTrace();
         }

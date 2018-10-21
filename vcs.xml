@@ -10,6 +10,10 @@
           <option name="url" value="https://rk2525@bitbucket.org/rk2525/universal.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://NIR90332@bitbucket.org/NIRAJ3064/kbro2018.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Tejas Soni\AndroidStudioProjects" />

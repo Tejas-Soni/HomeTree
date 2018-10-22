@@ -14,6 +14,10 @@
           <option name="url" value="https://NIR90332@bitbucket.org/NIRAJ3064/kbro2018.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://NIR90332@bitbucket.org/NIRAJ3064/inc.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Tejas Soni\AndroidStudioProjects" />

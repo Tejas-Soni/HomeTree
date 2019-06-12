@@ -70,6 +70,10 @@
           <option name="url" value="https://github.com/mitchtabian/TabianCustomCamera.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/sourabh86/HashTagsAndroid.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects\TestingProjects" />

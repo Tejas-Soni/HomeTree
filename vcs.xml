@@ -74,6 +74,10 @@
           <option name="url" value="https://github.com/sourabh86/HashTagsAndroid.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://bitbucket.org" />
+          <option name="userName" value="fabwalley" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects\TestingProjects" />

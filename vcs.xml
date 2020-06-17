@@ -76,7 +76,7 @@
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="http://bitbucket.org" />
-          <option name="userName" value="fabwalley" />
+          <option name="userName" value="fabwalleytechnologies" />
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="https://github.com/RohitSurwase/AndroidDesignPatterns.git" />
@@ -104,6 +104,10 @@
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="https://github.com/rizmaulana/kotlin-mvvm-covid19.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://fabwalleytechnologies@bitbucket.org/fabwalleytechnologies/dilwale.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
       </list>

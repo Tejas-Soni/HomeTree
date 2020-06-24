@@ -1,6 +1,7 @@
 <application>
   <component name="NotificationConfiguration">
     <notification groupId="Build sync orphan modules" displayType="NONE" shouldLog="false" />
+    <notification groupId="Dart Analysis" displayType="NONE" shouldLog="false" />
     <notification groupId="External Executable Critical Failures" displayType="NONE" />
     <notification groupId="Gradle Notification Group" displayType="NONE" shouldLog="false" />
   </component>

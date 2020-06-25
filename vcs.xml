@@ -110,8 +110,12 @@
           <option name="url" value="https://fabwalleytechnologies@bitbucket.org/fabwalleytechnologies/dilwale.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://fabwalleytechnologies@bitbucket.org/fabwalleytechnologies/degree360.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects" />
+    <option name="cloneParentDir" value="E:\Tejas\Games" />
   </component>
 </application>

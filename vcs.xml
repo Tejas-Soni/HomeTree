@@ -76,7 +76,7 @@
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="http://bitbucket.org" />
-          <option name="userName" value="fabwalley" />
+          <option name="userName" value="tejas100ni" />
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="https://github.com/RohitSurwase/AndroidDesignPatterns.git" />
@@ -133,6 +133,10 @@
         <UrlAndUserName>
           <option name="url" value="http://gitlab.com" />
           <option name="userName" value="Tejas513" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://tejas100ni@bitbucket.org/nexuslinkandroid/tutumandroidapp.git" />
+          <option name="userName" value="" />
         </UrlAndUserName>
       </list>
     </option>

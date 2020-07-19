@@ -166,6 +166,14 @@
           <option name="url" value="https://github.com/alexbezhan/Instagram-Clone-Kotlin.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/mohak1283/Instagram-Clone.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/koiralapankajgit/instagramClone_flutter.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects\TestingProjects" />

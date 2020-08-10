@@ -182,9 +182,13 @@
           <option name="url" value="https://fabwalley@bitbucket.org/fabwalley/food.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/igorwojda/android-showcase.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects" />
+    <option name="cloneParentDir" value="E:\Tejas\AndroidStudioProjects\TestingProjects" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="COLUMN_ORDER">

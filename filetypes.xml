@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping ext="webp" type="Image" />
       <mapping ext="main.kts" type="Kotlin" />
+      <mapping ext="plist" type="PLAIN_TEXT" />
       <mapping ext="jks" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
